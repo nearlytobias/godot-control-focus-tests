@@ -1,47 +1,93 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkqnyh3hy6mwk"]
+[gd_scene format=3 uid="uid://dkqnyh3hy6mwk"]
 
 [ext_resource type="Script" uid="uid://dq8pf1afh7ooe" path="res://main.gd" id="1_ig7tw"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=511482499]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_ig7tw")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=570924100]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2008377986]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=332418896]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TestSceneMenu" type="MenuButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1857838397]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Select Test"
 flat = false
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="CurrentTestScene" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=210194680]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=879316895]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CurrentInputMethod" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1635022211]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="InputMethodMenu" type="MenuButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=690470379]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Select Method"
+flat = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=883646096]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="PrintScores" type="CheckButton" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=651591491]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Print calculated scores"
+
+[node name="DrawDebug" type="CheckButton" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=225751935]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Draw debug points"
+alignment = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer/VBoxContainer" unique_id=213033755]
+layer = -1
+
+[node name="TestSceneRoot" type="Control" parent="MarginContainer/VBoxContainer/CanvasLayer" unique_id=40750461]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
+[connection signal="toggled" from="MarginContainer/VBoxContainer/VBoxContainer/PrintScores" to="." method="_on_print_scores_toggled"]

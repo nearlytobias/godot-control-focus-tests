@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d1wgrjuyosfgr"]
+
+[node name="Test" type="Control" unique_id=1511081384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="." unique_id=2819159]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 410.0
+offset_right = 247.0
+offset_bottom = 485.0
+text = "start"
+clip_text = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1860135689]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 17.0
+offset_right = 590.0
+offset_bottom = 210.0
+rotation = 0.4956735
+scale = Vector2(0.741, 1)
+
+[node name="Start" type="Button" parent="HBoxContainer" unique_id=1263071500]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1023398744]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=1791139322]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1898682426]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 17.0
+offset_right = 909.0
+offset_bottom = 210.0
+rotation = 0.4956735
+scale = Vector2(0.741, 1)
+
+[node name="Start" type="Button" parent="HBoxContainer2" unique_id=238907527]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="Button2" type="Button" parent="HBoxContainer2" unique_id=490304598]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="Button3" type="Button" parent="HBoxContainer2" unique_id=1108795335]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=1311966102]
+layout_mode = 0
+offset_left = 468.99994
+offset_top = 306.0
+offset_right = 747.99994
+offset_bottom = 499.0
+rotation = 0.4956735
+scale = Vector2(0.741, 1)
+
+[node name="Start" type="Button" parent="HBoxContainer3" unique_id=913355745]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="Button2" type="Button" parent="HBoxContainer3" unique_id=1576250109]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true
+
+[node name="Button3" type="Button" parent="HBoxContainer3" unique_id=1263395343]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "button"
+clip_text = true

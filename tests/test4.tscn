@@ -1,43 +1,45 @@
 [gd_scene format=3 uid="uid://c6u7bj0vqu08n"]
 
-[node name="Test" type="Control"]
+[node name="Test" type="Control" unique_id=162504]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -7.0
-offset_bottom = -453.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="."]
-layout_mode = 2
+[node name="Start" type="Button" parent="." unique_id=266997500]
+layout_mode = 0
 offset_left = 43.0
 offset_top = 50.0
 offset_right = 168.0
 offset_bottom = 94.0
 size_flags_vertical = 4
 text = "start"
+clip_text = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="." unique_id=766148269]
 custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
+layout_mode = 0
 offset_left = 40.0
 offset_top = 110.0
 offset_right = 1080.0
 offset_bottom = 161.0
 text = "button"
+clip_text = true
 
-[node name="Button4" type="Button" parent="."]
+[node name="Button4" type="Button" parent="." unique_id=1144604997]
 custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
+layout_mode = 0
 offset_left = 42.0
 offset_top = 176.0
 offset_right = 172.0
 offset_bottom = 216.0
 text = "button"
+clip_text = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=952305611]
+layout_mode = 0
 offset_left = 226.0
 offset_top = 232.0
 offset_right = 452.0

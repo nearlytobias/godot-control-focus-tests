@@ -1,42 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3ebrsjhvwvpd"]
+[gd_scene format=3 uid="uid://b3ebrsjhvwvpd"]
 
 [ext_resource type="Texture2D" uid="uid://c0gowuiysuy7g" path="res://arrow.png" id="1_yx5hd"]
 
-[node name="Test" type="Control"]
+[node name="Test" type="Control" unique_id=1993602083]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -466.0
-offset_bottom = -538.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="." unique_id=468075452]
 layout_mode = 0
 offset_right = 261.0
 offset_bottom = 179.0
 columns = 2
 
-[node name="Start" type="Button" parent="GridContainer"]
+[node name="Start" type="Button" parent="GridContainer" unique_id=281854124]
 layout_mode = 2
 size_flags_vertical = 4
 text = "start"
 
-[node name="Button2" type="Button" parent="GridContainer"]
+[node name="Button2" type="Button" parent="GridContainer" unique_id=941167594]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "button"
 
-[node name="Button3" type="Button" parent="GridContainer"]
+[node name="Button3" type="Button" parent="GridContainer" unique_id=1953051731]
 layout_mode = 2
 text = "button"
 
-[node name="Button4" type="Button" parent="GridContainer"]
+[node name="Button4" type="Button" parent="GridContainer" unique_id=1203975581]
 layout_mode = 2
 text = "button"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=887506902]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 142.0
@@ -44,7 +42,7 @@ offset_right = 244.0
 offset_bottom = 165.0
 text = "DOWN: expected focus"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=143963809]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 86.0

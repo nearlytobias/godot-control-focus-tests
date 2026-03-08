@@ -1,0 +1,466 @@
+[gd_scene format=3 uid="uid://ddo3n4cg214id"]
+
+[ext_resource type="Texture2D" uid="uid://bqts6cxu6sial" path="res://2026-03-08_15-03.png" id="1_dph3p"]
+
+[node name="Test" type="Control" unique_id=1511081384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="202603081503" type="Sprite2D" parent="." unique_id=1138712251]
+position = Vector2(438.99997, 233.99998)
+scale = Vector2(0.55706877, 0.55706877)
+texture = ExtResource("1_dph3p")
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Button" parent="." unique_id=1263071500]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 57.0
+offset_right = 126.0
+offset_bottom = 88.0
+text = "start"
+
+[node name="Button" type="Button" parent="." unique_id=771500411]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 57.0
+offset_right = 189.0
+offset_bottom = 88.0
+text = "btn"
+clip_text = true
+
+[node name="Button2" type="Button" parent="." unique_id=1377368103]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 57.0
+offset_right = 254.0
+offset_bottom = 88.0
+text = "btn"
+clip_text = true
+
+[node name="Button3" type="Button" parent="." unique_id=558671309]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 115.0
+offset_right = 120.0
+offset_bottom = 146.0
+text = "btn"
+clip_text = true
+
+[node name="Button4" type="Button" parent="." unique_id=547999489]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 115.0
+offset_right = 191.0
+offset_bottom = 146.0
+text = "btn"
+clip_text = true
+
+[node name="Button5" type="Button" parent="." unique_id=1114965228]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 115.0
+offset_right = 255.0
+offset_bottom = 146.0
+text = "btn"
+clip_text = true
+
+[node name="Button6" type="Button" parent="." unique_id=513475712]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 173.0
+offset_right = 255.0
+offset_bottom = 204.0
+text = "btn"
+clip_text = true
+
+[node name="Button7" type="Button" parent="." unique_id=1273275833]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 173.0
+offset_right = 188.0
+offset_bottom = 204.0
+text = "btn"
+clip_text = true
+
+[node name="Button8" type="Button" parent="." unique_id=1644464027]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 175.0
+offset_right = 119.0
+offset_bottom = 206.0
+text = "btn"
+clip_text = true
+
+[node name="Button9" type="Button" parent="." unique_id=716242563]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 228.0
+offset_right = 118.0
+offset_bottom = 259.0
+text = "btn"
+clip_text = true
+
+[node name="Button10" type="Button" parent="." unique_id=1647361498]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 267.0
+offset_right = 208.0
+offset_bottom = 298.0
+text = "btn"
+clip_text = true
+
+[node name="Button11" type="Button" parent="." unique_id=1402015336]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 306.0
+offset_right = 175.0
+offset_bottom = 337.0
+text = "btn"
+clip_text = true
+
+[node name="Button12" type="Button" parent="." unique_id=2001977476]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 345.0
+offset_right = 142.0
+offset_bottom = 376.0
+text = "btn"
+clip_text = true
+
+[node name="Button13" type="Button" parent="." unique_id=544126134]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 384.0
+offset_right = 110.0
+offset_bottom = 415.0
+text = "btn"
+clip_text = true
+
+[node name="Button14" type="Button" parent="." unique_id=642656042]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 385.0
+offset_right = 177.0
+offset_bottom = 416.0
+text = "btn"
+clip_text = true
+
+[node name="Button15" type="Button" parent="." unique_id=631084733]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 344.0
+offset_right = 211.0
+offset_bottom = 375.0
+text = "btn"
+clip_text = true
+
+[node name="Button16" type="Button" parent="." unique_id=158569528]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 306.0
+offset_right = 243.0
+offset_bottom = 337.0
+text = "btn"
+clip_text = true
+
+[node name="Button17" type="Button" parent="." unique_id=697224234]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 344.0
+offset_right = 277.0
+offset_bottom = 375.0
+text = "btn"
+clip_text = true
+
+[node name="Button18" type="Button" parent="." unique_id=531398433]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 383.0
+offset_right = 243.0
+offset_bottom = 414.0
+text = "btn"
+clip_text = true
+
+[node name="Button19" type="Button" parent="." unique_id=1376550893]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 384.0
+offset_right = 309.0
+offset_bottom = 415.0
+text = "btn"
+clip_text = true
+
+[node name="Button20" type="Button" parent="." unique_id=1970441092]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 164.0
+offset_right = 423.0
+offset_bottom = 195.0
+text = "btn"
+clip_text = true
+
+[node name="Button21" type="Button" parent="." unique_id=1933591006]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 203.0
+offset_right = 390.0
+offset_bottom = 234.0
+text = "btn"
+clip_text = true
+
+[node name="Button22" type="Button" parent="." unique_id=1118051089]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 242.0
+offset_right = 357.0
+offset_bottom = 273.0
+text = "btn"
+clip_text = true
+
+[node name="Button23" type="Button" parent="." unique_id=1017562707]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 281.0
+offset_right = 325.0
+offset_bottom = 312.0
+text = "btn"
+clip_text = true
+
+[node name="Button24" type="Button" parent="." unique_id=1253759377]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 282.0
+offset_right = 392.0
+offset_bottom = 313.0
+text = "btn"
+clip_text = true
+
+[node name="Button25" type="Button" parent="." unique_id=1779741724]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 241.0
+offset_right = 426.0
+offset_bottom = 272.0
+text = "btn"
+clip_text = true
+
+[node name="Button26" type="Button" parent="." unique_id=1453774882]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 203.0
+offset_right = 458.0
+offset_bottom = 234.0
+text = "btn"
+clip_text = true
+
+[node name="Button40" type="Button" parent="." unique_id=516850120]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 57.0
+offset_right = 407.0
+offset_bottom = 88.0
+text = "btn"
+clip_text = true
+
+[node name="Button41" type="Button" parent="." unique_id=1678726122]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 57.0
+offset_right = 475.0
+offset_bottom = 88.0
+text = "btn"
+clip_text = true
+
+[node name="Button42" type="Button" parent="." unique_id=544139959]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 97.0
+offset_right = 437.0
+offset_bottom = 128.0
+text = "btn"
+clip_text = true
+
+[node name="Button43" type="Button" parent="." unique_id=1078669819]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 97.0
+offset_right = 505.0
+offset_bottom = 128.0
+text = "btn"
+clip_text = true
+
+[node name="Button44" type="Button" parent="." unique_id=644490039]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 98.0
+offset_right = 572.0
+offset_bottom = 129.0
+text = "btn"
+clip_text = true
+
+[node name="Button45" type="Button" parent="." unique_id=1200349401]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 98.0
+offset_right = 640.0
+offset_bottom = 129.0
+text = "btn"
+clip_text = true
+
+[node name="Button46" type="Button" parent="." unique_id=626632079]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 58.0
+offset_right = 610.0
+offset_bottom = 89.0
+text = "btn"
+clip_text = true
+
+[node name="Button48" type="Button" parent="." unique_id=1193974136]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 58.0
+offset_right = 543.0
+offset_bottom = 89.0
+text = "btn"
+clip_text = true
+
+[node name="Button49" type="Button" parent="." unique_id=1120906178]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 133.0
+offset_right = 544.0
+offset_bottom = 164.0
+text = "btn"
+clip_text = true
+
+[node name="Button47" type="Button" parent="." unique_id=1653832683]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 58.0
+offset_right = 678.0
+offset_bottom = 89.0
+text = "btn"
+clip_text = true
+
+[node name="Button27" type="Button" parent="." unique_id=1005902801]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 241.0
+offset_right = 492.0
+offset_bottom = 272.0
+text = "btn"
+clip_text = true
+
+[node name="Button28" type="Button" parent="." unique_id=1513488906]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 280.0
+offset_right = 458.0
+offset_bottom = 311.0
+text = "btn"
+clip_text = true
+
+[node name="Button29" type="Button" parent="." unique_id=348730343]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 281.0
+offset_right = 524.0
+offset_bottom = 312.0
+text = "btn"
+clip_text = true
+
+[node name="Button30" type="Button" parent="." unique_id=949779568]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 251.0
+offset_right = 719.0
+offset_bottom = 282.0
+text = "btn"
+clip_text = true
+
+[node name="Button31" type="Button" parent="." unique_id=604712488]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 290.0
+offset_right = 686.0
+offset_bottom = 321.0
+text = "btn"
+clip_text = true
+
+[node name="Button32" type="Button" parent="." unique_id=493128420]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 329.0
+offset_right = 653.0
+offset_bottom = 360.0
+text = "btn"
+clip_text = true
+
+[node name="Button33" type="Button" parent="." unique_id=2081312986]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 368.0
+offset_right = 621.0
+offset_bottom = 399.0
+text = "btn"
+clip_text = true
+
+[node name="Button34" type="Button" parent="." unique_id=1724228177]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 369.0
+offset_right = 688.0
+offset_bottom = 400.0
+text = "btn"
+clip_text = true
+
+[node name="Button35" type="Button" parent="." unique_id=1566136264]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 328.0
+offset_right = 722.0
+offset_bottom = 359.0
+text = "btn"
+clip_text = true
+
+[node name="Button36" type="Button" parent="." unique_id=1621919437]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 290.0
+offset_right = 754.0
+offset_bottom = 321.0
+text = "btn"
+clip_text = true
+
+[node name="Button37" type="Button" parent="." unique_id=1327128481]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 328.0
+offset_right = 788.0
+offset_bottom = 359.0
+text = "btn"
+clip_text = true
+
+[node name="Button38" type="Button" parent="." unique_id=1517261825]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 367.0
+offset_right = 754.0
+offset_bottom = 398.0
+text = "btn"
+clip_text = true
+
+[node name="Button39" type="Button" parent="." unique_id=2096255900]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 368.0
+offset_right = 820.0
+offset_bottom = 399.0
+text = "btn"
+clip_text = true

@@ -1,82 +1,88 @@
-[gd_scene load_steps=2 format=3 uid="uid://juoeutsr3jex"]
+[gd_scene format=3 uid="uid://juoeutsr3jex"]
 
 [ext_resource type="Texture2D" uid="uid://c0gowuiysuy7g" path="res://arrow.png" id="1_4psg2"]
 
-[node name="Test" type="Control"]
+[node name="Test" type="Control" unique_id=1234459583]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -45.0
-offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="Button" parent="." unique_id=2017714901]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 47.0
 offset_right = 191.0
 offset_bottom = 294.0
 text = "start"
+clip_text = true
 
-[node name="Start2" type="Button" parent="."]
+[node name="Start2" type="Button" parent="." unique_id=935469485]
 layout_mode = 0
 offset_left = 206.0
 offset_top = 445.0
 offset_right = 304.0
 offset_bottom = 579.0
 text = "start"
+clip_text = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="." unique_id=18805399]
 layout_mode = 0
 offset_left = 249.0
 offset_top = 163.0
 offset_right = 310.0
 offset_bottom = 209.0
 text = "button"
+clip_text = true
 
-[node name="Button4" type="Button" parent="."]
+[node name="Button4" type="Button" parent="." unique_id=1907012462]
 layout_mode = 0
 offset_left = 209.0
 offset_top = 264.0
 offset_right = 270.0
 offset_bottom = 310.0
 text = "button"
+clip_text = true
 
-[node name="Button6" type="Button" parent="."]
+[node name="Button6" type="Button" parent="." unique_id=544848961]
 layout_mode = 0
 offset_left = 330.0
 offset_top = 546.0
 offset_right = 391.0
 offset_bottom = 592.0
 text = "button"
+clip_text = true
 
-[node name="Button7" type="Button" parent="."]
+[node name="Button7" type="Button" parent="." unique_id=1315854012]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 463.0
 offset_right = 477.0
 offset_bottom = 576.0
 text = "button"
+clip_text = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="Button" parent="." unique_id=873692280]
 layout_mode = 0
 offset_left = 215.0
 offset_top = 29.0
 offset_right = 276.0
 offset_bottom = 231.0
 text = "button"
+clip_text = true
 
-[node name="Button5" type="Button" parent="."]
+[node name="Button5" type="Button" parent="." unique_id=771933746]
 layout_mode = 0
 offset_left = 330.0
 offset_top = 303.0
 offset_right = 391.0
 offset_bottom = 505.0
 text = "button"
+clip_text = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=575712726]
 layout_mode = 0
 offset_left = 353.0
 offset_top = 89.0
@@ -84,7 +90,7 @@ offset_right = 579.0
 offset_bottom = 112.0
 text = "RIGHT: equally good options"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=1267364858]
 layout_mode = 0
 offset_left = 266.0
 offset_top = 643.0
@@ -92,7 +98,7 @@ offset_right = 492.0
 offset_bottom = 666.0
 text = "RIGHT: equally good options"
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="." unique_id=849772373]
 layout_mode = 0
 offset_left = 449.0
 offset_top = 369.0
@@ -100,7 +106,7 @@ offset_right = 675.0
 offset_bottom = 392.0
 text = "RIGHT: equally good options"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=689954121]
 layout_mode = 0
 offset_left = 298.0
 offset_top = 74.0
@@ -112,7 +118,7 @@ texture = ExtResource("1_4psg2")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=49408020]
 layout_mode = 0
 offset_left = 311.0
 offset_top = 123.0
@@ -124,7 +130,7 @@ texture = ExtResource("1_4psg2")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=108522241]
 layout_mode = 0
 offset_left = 329.0
 offset_top = 603.0
@@ -136,7 +142,7 @@ texture = ExtResource("1_4psg2")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=826358892]
 layout_mode = 0
 offset_left = 394.0
 offset_top = 374.0

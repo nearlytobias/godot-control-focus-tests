@@ -1,42 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjxsk7a1a36yl"]
+[gd_scene format=3 uid="uid://cjxsk7a1a36yl"]
 
 [ext_resource type="Texture2D" uid="uid://c0gowuiysuy7g" path="res://arrow.png" id="1_n1u4o"]
 
-[node name="Test" type="Control"]
+[node name="Test" type="Control" unique_id=1511081384]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -409.0
-offset_bottom = -474.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="Button" parent="." unique_id=1263071500]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 26.0
 offset_right = 161.0
 offset_bottom = 57.0
 text = "start"
+clip_text = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="." unique_id=1023398744]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 95.0
 offset_right = 163.0
 offset_bottom = 126.0
 text = "button"
+clip_text = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="Button" parent="." unique_id=1791139322]
 layout_mode = 0
 offset_left = 188.0
 offset_top = 44.0
 offset_right = 295.0
 offset_bottom = 75.0
 text = "button"
+clip_text = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1605681424]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 198.0
@@ -44,7 +45,7 @@ offset_right = 265.0
 offset_bottom = 221.0
 text = "DOWN: expected focus"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1030717163]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 148.0
