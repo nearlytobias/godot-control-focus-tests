@@ -9,7 +9,8 @@ var _current_test: Control
 var implementations : Array[InputImplementation] = [
 	preload("res://implementations/Godot.gd").new(),
 	preload("res://implementations/BalloonCenter.gd").new(),
-	preload("res://implementations/BalloonEdge.gd").new(),
+	preload("res://implementations/BalloonEdgeTowardsCenter.gd").new(),
+	preload("res://implementations/BalloonEdge.gd").new()
 ]
 
 var _current_implementation : InputImplementation

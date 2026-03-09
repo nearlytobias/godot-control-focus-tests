@@ -1,69 +1,76 @@
-extends InputImplementation
+extends BalloonImplementation
 
-## Balloon implementation. This variant calculates positions at a candidate's borders to more accurately
-## simulate the "balloon" growing metaphor.
+## Balloon edge implementation. This variant calculates the true edge point from
+## a "growing balloon" metaphor.
 
-## Why oh why doesn't Godot have tuples ;-;
-class Candidate:
-	const UNDEFINED_SCORE = -1
-
-	func _init(node: Control, point: Vector2, score: float = UNDEFINED_SCORE) -> void:
-		self.node = node
-		self.point = point
-		self.score = score
-
-	var node : Control
-	var point : Vector2
-	var score : float
-
-	func print_score():
-		node.text = "*" if score == UNDEFINED_SCORE else "%.2f" % score
-
-	func is_higher(other: Candidate) -> bool:
-		if score == UNDEFINED_SCORE and other.score != UNDEFINED_SCORE:
-			return true
-		if score != UNDEFINED_SCORE and other.score == UNDEFINED_SCORE:
-			return false
-		return other.score > score
+## Algorithm author: @runevision (https://gist.github.com/runevision/970445fa11280def3e8be241fd3dc720)
 
 func friendly_name() -> String:
 	return "Balloon (with edge points)"
 
-func _begin() -> void:
-	pass
+func calculate_candidate_point(starting_point: Vector2, input_dir: Vector2, candidate_rect: Rect2) -> Vector2:
+	var score := -1e10
+	var touch := Vector2.ZERO
 
-func _end() -> void:
-	pass
+	# The four corners of the rect
+	var PA : Vector2 = candidate_rect.position
+	var PB : Vector2 = Vector2(candidate_rect.end.x, candidate_rect.position.y)
+	var PC : Vector2 = candidate_rect.end
+	var PD : Vector2 = Vector2(candidate_rect.position.x, candidate_rect.end.y)
 
-func _input(input_dir: Vector2, nodes: Array[Control], current_node: Control) -> Control:
-	# Following the algorithm:
+	# Iterative version of original lambda based algorithm, because
+	# Godot lambdas apparently can't modify variables
+	# in function scope (aka are akin to C++ by-value)
+	var sides = [
+		[PA, PB],
+		[PB, PC],
+		[PC, PD],
+		[PD, PA]
+	]
+
+	for side in sides:
+		var p1 = side[0]
+		var p2 = side[1]
+
+		var new_touch = balloon_score_line_segment(starting_point, input_dir, p1, p2)
+		var new_score = balloon_score_point(starting_point, input_dir, new_touch)
+
+		if new_score > score:
+			score = new_score
+			touch = new_touch
+	return touch
+
+func balloon_score_point(start: Vector2, dir: Vector2, point: Vector2) -> float:
+	var vec := point - start
+	return dir.dot(vec) / vec.length_squared()
+
+func balloon_score_line_segment(start: Vector2, dir: Vector2, p1: Vector2, p2: Vector2) -> Vector2:
+	var lineVec := p2 - p1 
+	var normal := Vector2(-lineVec.y, lineVec.x).normalized()
+	var intersectDir := (dir + normal)
+	var touch = intersect(start, start + intersectDir, p1, p2)
+	if ((touch - p2).dot(p1 - p2) < 0):
+		touch = p2
+	if ((touch - p1).dot(p2 - p1) < 0):
+		touch = p1
+	return touch
+
+func intersect(line1A: Vector2, line1B: Vector2, line2A: Vector2, line2B: Vector2):
+	# Line 1
+	var A1 : float = line1B.y - line1A.y
+	var B1 : float = line1A.x - line1B.x
+	var C1 : float = A1 * line1A.x + B1 * line1A.y
+
+	# Line 2
+	var A2 : float = line2B.y - line2A.y
+	var B2 : float = line2A.x - line2B.x
+	var C2 : float = A2 * line2A.x + B2 * line2A.y
+
+	var det : float = A1 * B2 - A2 * B1
+	if is_zero_approx(det):
+		# Parallel lines
+		return Vector2.INF
 	
-	# 1. Compute the starting point.
-	#    (we will assume bounding boxes to facilitate math)
-	var control_rect := current_node.get_global_rect()
-	var starting_point := intersect_rect_with_dir(control_rect, control_rect.get_center(), input_dir)
-	add_draw_point(starting_point, Color.GREEN)
-	
-	# 2. Calculate score iteratively, storing a pair of <controlNode, score> for the lowest score
-	var candidate = Candidate.new(current_node, starting_point)
-	if _print_scores: candidate.print_score()
-	for node in nodes:
-		var node_rect = node.get_global_rect()
-		var node_dir = starting_point - node_rect.get_center()
-		var node_point = intersect_rect_with_dir(node_rect, node_rect.get_center(), node_dir)
-		add_draw_point(node_point, Color.AQUA)
-		var node_distance =  node_point - starting_point
-		var other_candidate = Candidate.new(
-			node,
-			node_point,
-			input_dir.dot(node_distance) / node_distance.length_squared()
-		)
-		if _print_scores: other_candidate.print_score()
-		if candidate.is_higher(other_candidate):
-			candidate = other_candidate
-	
-	# 3. Return the candidate node only if the score is positive;
-	#    otherwise, maintain focus on current node
-	if candidate.score > 0:
-		add_draw_circle(starting_point, candidate.point, Color.DARK_CYAN)
-	return candidate.node if candidate.score > 0 else current_node
+	var x : float = (B2 * C1 - B1 * C2) / det
+	var y : float = (A1 * C2 - A2 * C1) / det
+	return Vector2(x, y)

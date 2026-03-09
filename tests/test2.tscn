@@ -44,9 +44,9 @@ text = "DOWN: expected focus"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=143963809]
 layout_mode = 0
-offset_left = 20.0
+offset_left = 20.000004
 offset_top = 86.0
-offset_right = 57.0
+offset_right = 57.000004
 offset_bottom = 116.0
 rotation = -1.90438
 pivot_offset = Vector2(20.861, 15.5347)
