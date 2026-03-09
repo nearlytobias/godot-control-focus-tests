@@ -1,6 +1,70 @@
 [gd_scene format=3 uid="uid://dkqnyh3hy6mwk"]
 
 [ext_resource type="Script" uid="uid://dq8pf1afh7ooe" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dgl5d2uykg4mq" path="res://input_glyphs/keyboard.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b5ruo1klq3sqm" path="res://input_glyphs/keyboard_arrows.png" id="3_1bvp3"]
+[ext_resource type="Resource" uid="uid://bot2qkc1wkgpr" path="res://input_glyphs/input_glyphs.tres" id="4_1bvp3"]
+
+[sub_resource type="GDScript" id="GDScript_1bvp3"]
+script/source = "extends TextureRect
+
+@export var glyphs: InputGlyphs
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		texture = glyphs.keyboard_icon
+	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		texture = glyphs.gamepad_icon
+"
+
+[sub_resource type="GDScript" id="GDScript_lquwl"]
+script/source = "extends TextureRect
+
+@export var glyphs: InputGlyphs
+
+func _ready() -> void:
+	texture = glyphs.kb_default
+	pivot_offset = size / 2
+	
+	
+func _input(event: InputEvent) -> void:
+	if not event.is_pressed() or event.is_echo():
+		return
+		
+	if event is InputEventKey:
+		if event.is_action_pressed(\"ui_left\") or event.is_action_pressed(\"custom_ui_left\"):
+			texture = glyphs.kb_left
+		elif event.is_action_pressed(\"ui_right\") or event.is_action_pressed(\"custom_ui_right\"):
+			texture = glyphs.kb_right
+		elif event.is_action_pressed(\"ui_down\") or event.is_action_pressed(\"custom_ui_down\"):
+			texture = glyphs.kb_down
+		elif event.is_action_pressed(\"ui_up\") or event.is_action_pressed(\"custom_ui_up\"):
+			texture = glyphs.kb_up
+		else:
+			return
+			
+	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		if event.is_action_pressed(\"ui_left\") or event.is_action_pressed(\"custom_ui_left\"):
+			texture = glyphs.pad_left
+		elif event.is_action_pressed(\"ui_right\") or event.is_action_pressed(\"custom_ui_right\"):
+			texture = glyphs.pad_right
+		elif event.is_action_pressed(\"ui_down\") or event.is_action_pressed(\"custom_ui_down\"):
+			texture = glyphs.pad_down
+		elif event.is_action_pressed(\"ui_up\") or event.is_action_pressed(\"custom_ui_up\"):
+			texture = glyphs.pad_up
+		else:
+			return
+		
+	blink()
+
+
+func blink() -> void:
+	var tween = create_tween().set_parallel(true)
+	scale = Vector2(1.2, 1.2)
+	modulate = Color(2, 2, 2)
+	tween.tween_property(self, \"scale\", Vector2.ONE, 0.1)
+	tween.tween_property(self, \"modulate\", Color.WHITE, 0.1)
+"
 
 [node name="Main" type="Control" unique_id=511482499]
 layout_mode = 3
@@ -58,17 +122,61 @@ layout_mode = 2
 text = "Select Method"
 flat = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=883646096]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=10561886]
 layout_mode = 2
-size_flags_horizontal = 8
 
-[node name="PrintScores" type="CheckButton" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=651591491]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=944840817]
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer" unique_id=348791727]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer" unique_id=1697884042]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/HBoxContainer" unique_id=1558925179]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Input"
+horizontal_alignment = 1
+
+[node name="InputDeviceIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/HBoxContainer" unique_id=433116074]
+texture_filter = 3
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_h2yge")
+expand_mode = 3
+stretch_mode = 3
+script = SubResource("GDScript_1bvp3")
+glyphs = ExtResource("4_1bvp3")
+
+[node name="InputGlyph" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/HBoxContainer" unique_id=149065519]
+texture_filter = 3
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_1bvp3")
+stretch_mode = 5
+script = SubResource("GDScript_lquwl")
+glyphs = ExtResource("4_1bvp3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=883646096]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="PrintScores" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=651591491]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 text = "Print calculated scores"
 
-[node name="DrawDebug" type="CheckButton" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=225751935]
+[node name="DrawDebug" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=225751935]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
@@ -90,4 +198,4 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="toggled" from="MarginContainer/VBoxContainer/VBoxContainer/PrintScores" to="." method="_on_print_scores_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/PrintScores" to="." method="_on_print_scores_toggled"]

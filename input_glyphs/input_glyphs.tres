@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="InputGlyphs" format=3 uid="uid://bot2qkc1wkgpr"]
+
+[ext_resource type="Texture2D" uid="uid://b5ruo1klq3sqm" path="res://input_glyphs/keyboard_arrows.png" id="1_g2s64"]
+[ext_resource type="Script" uid="uid://b1euotvibl7xb" path="res://input_glyphs/input_glyphs.gd" id="1_v1j08"]
+[ext_resource type="Texture2D" uid="uid://c1vsol2thuopn" path="res://input_glyphs/keyboard_arrows_down.png" id="2_glvg4"]
+[ext_resource type="Texture2D" uid="uid://dn6jkhw4o50jh" path="res://input_glyphs/keyboard_arrows_left.png" id="3_33mr6"]
+[ext_resource type="Texture2D" uid="uid://dnrgi28okqcdw" path="res://input_glyphs/keyboard_arrows_up.png" id="4_w2i86"]
+[ext_resource type="Texture2D" uid="uid://dpaxug7q177b3" path="res://input_glyphs/keyboard_arrows_right.png" id="5_rswa5"]
+[ext_resource type="Texture2D" uid="uid://dgl5d2uykg4mq" path="res://input_glyphs/keyboard.png" id="6_8ma8b"]
+[ext_resource type="Texture2D" uid="uid://womcyhr3rvrv" path="res://input_glyphs/controller_steam.png" id="6_glvg4"]
+[ext_resource type="Texture2D" uid="uid://3sw76hrp24at" path="res://input_glyphs/xbox_dpad.png" id="8_aj5kv"]
+[ext_resource type="Texture2D" uid="uid://cbvkvcfw1vukw" path="res://input_glyphs/xbox_dpad_down.png" id="9_y0cpj"]
+[ext_resource type="Texture2D" uid="uid://dsc1xhmkgtq0b" path="res://input_glyphs/xbox_dpad_left.png" id="10_1d3kc"]
+[ext_resource type="Texture2D" uid="uid://cwyj3dw01vstl" path="res://input_glyphs/xbox_dpad_right.png" id="11_kbx3v"]
+[ext_resource type="Texture2D" uid="uid://dghh27gg5q4t4" path="res://input_glyphs/xbox_dpad_up.png" id="12_hdsxg"]
+
+[resource]
+script = ExtResource("1_v1j08")
+keyboard_icon = ExtResource("6_8ma8b")
+gamepad_icon = ExtResource("6_glvg4")
+kb_default = ExtResource("1_g2s64")
+kb_up = ExtResource("4_w2i86")
+kb_down = ExtResource("2_glvg4")
+kb_left = ExtResource("3_33mr6")
+kb_right = ExtResource("5_rswa5")
+pad_default = ExtResource("8_aj5kv")
+pad_up = ExtResource("12_hdsxg")
+pad_down = ExtResource("9_y0cpj")
+pad_left = ExtResource("10_1d3kc")
+pad_right = ExtResource("11_kbx3v")
+metadata/_custom_type_script = "uid://b1euotvibl7xb"
