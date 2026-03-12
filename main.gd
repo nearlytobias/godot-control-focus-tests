@@ -1,6 +1,6 @@
 extends Control
 
-var _test_paths: PackedStringArray
+var _test_paths: Array[String]
 var _test_menu_popup: PopupMenu
 var _input_method_popup: PopupMenu
 
@@ -25,7 +25,8 @@ var _current_implementation : InputImplementation
 
 
 func _ready() -> void:
-	_test_paths = DirAccess.open("res://tests/").get_files()
+	for path in DirAccess.open("res://tests/").get_files():
+		_test_paths.push_back(path.trim_suffix(".remap"))
 	
 	_test_menu_popup = test_menu.get_popup()
 	_test_menu_popup.index_pressed.connect(_on_popup_index_pressed)

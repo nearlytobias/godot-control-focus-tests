@@ -24,9 +24,7 @@ func add_draw_point(position: Vector2, color: Color):
 	var point := DrawPoint.new(position, color)
 	_debug_draw_points.push_back(point)
 	
-func add_draw_circle(position_from: Vector2, position_to, color: Color):
-	var center = lerp(position_from, position_to, 0.5)
-	var radius = (position_from - position_to).length() / 2.0
+func add_draw_circle(center: Vector2, radius: float, color: Color):
 	var circle := DrawCircle.new(center, color, radius)
 	_debug_draw_points.push_back(circle)
 

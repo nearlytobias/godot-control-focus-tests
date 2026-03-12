@@ -68,5 +68,7 @@ func _input(input_dir: Vector2, nodes: Array[Control], current_node: Control) ->
 	# 3. Return the candidate node only if the score is positive;
 	#    otherwise, maintain focus on current node
 	if candidate.score > 0:
-		add_draw_circle(starting_point, candidate.point, Color.DARK_CYAN)
+		var radius : float = 0.5 / candidate.score
+		var center = starting_point + input_dir * radius
+		add_draw_circle(center, radius, Color.DARK_CYAN)
 	return candidate.node if candidate.score > 0 else current_node
