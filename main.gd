@@ -1,6 +1,6 @@
 extends Control
 
-var _test_paths: PackedStringArray
+var _test_paths: Array[String]
 var _test_menu_popup: PopupMenu
 var _input_method_popup: PopupMenu
 
@@ -9,7 +9,8 @@ var _current_test: Control
 var implementations : Array[InputImplementation] = [
 	preload("res://implementations/Godot.gd").new(),
 	preload("res://implementations/BalloonCenter.gd").new(),
-	preload("res://implementations/BalloonEdge.gd").new(),
+	preload("res://implementations/BalloonEdgeTowardsCenter.gd").new(),
+	preload("res://implementations/BalloonEdge.gd").new()
 ]
 
 var _current_implementation : InputImplementation
@@ -24,7 +25,8 @@ var _current_implementation : InputImplementation
 
 
 func _ready() -> void:
-	_test_paths = DirAccess.open("res://tests/").get_files()
+	for path in DirAccess.open("res://tests/").get_files():
+		_test_paths.push_back(path.trim_suffix(".remap"))
 	
 	_test_menu_popup = test_menu.get_popup()
 	_test_menu_popup.index_pressed.connect(_on_popup_index_pressed)
